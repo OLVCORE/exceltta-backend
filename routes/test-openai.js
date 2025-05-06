@@ -1,8 +1,8 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const openai = require('../openai');
+const openai = require("../openai");
 
-router.post('/test-openai', async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const completion = await openai.createChatCompletion({
       model: "gpt-4",
