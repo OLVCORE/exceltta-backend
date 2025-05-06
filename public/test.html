@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Teste OpenAI – Exceltta Backend</title>
+</head>
+<body>
+  <h2>Testar Integração com OpenAI</h2>
+  <button onclick="testarOpenAI()">Enviar requisição</button>
+  <pre id="resposta"></pre>
+
+  <script>
+    async function testarOpenAI() {
+      const resposta = await fetch("/test-openai");
+      const dados = await resposta.json();
+      document.getElementById("resposta").innerText = JSON.stringify(dados, null, 2);
+    }
+  </script>
+</body>
+</html>
